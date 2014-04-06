@@ -69,24 +69,23 @@ then
     icons_path=$1
     icons_path=$(get_icons_path)
 
-    echo "icon_path : " $icons_path
+#    echo "icon_path : " $icons_path
 
     code_path=$2
     code_path=$(get_code_path)
 
-    echo "code_path : " $code_path
+#    echo "code_path : " $code_path
 
     if [ "$3" != "" -a "$3" != "c" ]
     then 
         type=$3
     fi
-    echo "icon type : " $type
+#    echo "icon type : " $type
 
     icons=$(find $icons_path -name *.png)
     for icon in $icons
     do
-        echo $icon
-        icon_full_name=$(basename icon)
+        icon_full_name=$(basename $icon)
 #        echo $icon_full_name
         app_name=${icon_full_name%%\_*}
 #        echo $app_name
@@ -95,13 +94,38 @@ then
 
         paths=$(find $code_path -type d -name $app_name)        
 
-        echo $app_path
+        if [ "$paths" = "" ]
+        then
+            paths=$(basename $code_path)
+            if [ "$paths" == "$app_name" ]
+            then
+                paths=$code_path
+            else
+                continue
+            fi
+        fi
+
+#        echo $app_path
         tmp_icon_name=${icon_name%%\.png}
 #        echo $tmp_icon_name
         app_path=${paths[0]}
-#        echo $app_path
+#        echo "app_path : "$app_path
 
-        str=$(grep -r $tmp_icon_name $app_path"/"$android_manifest)
+        if [ ! -d $app_path ]
+        then
+            echo $app_path "dir not exist!"
+            continue
+        fi
+
+        manifest_file_path=$app_path'/'$android_manifest
+
+        if [ ! -f $manifest_file_path ]
+        then
+            echo $manifest_file_path "file not exist!"
+            continue
+        fi
+
+        str=$(grep -r $tmp_icon_name $manifest_file_path)
 
 #        echo ${str[0]}
         tmp_prefix_path=${str%%\/$tmp_icon_name*}
@@ -137,42 +161,39 @@ then
         
         if [ "$type" != "" ]
         then
-            new_icon_path=$app_path/res/$icon_type-$type/$icon_name 
+            new_icon_path=$app_path/res/$icon_type-$type 
         else
-            new_icon_path=$app_path/res/$icon_type/$icon_name 
+            new_icon_path=$app_path/res/$icon_type 
         fi
         #echo $new_icon_path
-        if [ -e $new_icon_path ]
+        if [ -e $new_icon_path'/'$icon_name ]
         then
-            echo "file copy successfully!!!"
+            echo "$icon_full_name copy successfully!!!"
         else
             if [ "$#" -eq "4" -a "$4" = "c" ]
             then
-                new_icon_dir=$app_path/res/$icon_type
-#                echo $new_icon_dir
-                if [ -d $new_icon_dir ]
+                echo "icon dir : "$new_icon_path
+                if [ -d $new_icon_path ]
                 then
-                    cp $icon $new_icon_dir
-                    echo "file create successfully!!!"
+                    cp $icon $new_icon_path'/'$icon_name
+                    echo "$icon_full_name file create successfully!!!"
                 else
-                    echo "note : dir not exist and mkdir $new_icon_dir"
-                    mkdir $new_icon_dir
-                    cp $icon $new_icon_dir
-                    echo "file create successfully!!!"
+                    echo "note : dir not exist and mkdir $new_icon_path"
+                    mkdir $new_icon_path
+                    cp $icon $new_icon_path'/'$icon_name
+                    echo "$icon_full_name file create successfully!!!"
                 fi
             elif [ "$#" -eq "3" -a "$3" = "c" ]
             then
-                new_icon_dir=$app_path/res/$icon_type
-#                echo $new_icon_dir
-                if [ -d $new_icon_dir ]
+                if [ -d $new_icon_path ]
                 then
-                    cp $icon $new_icon_dir
-                    echo "file create successfully!!!"
+                    cp $icon $new_icon_path'/'$icon_name
+                    echo "$icon_full_name file create successfully!!!"
                 else
-                    echo "note : dir not exist and mkdir $new_icon_dir"
-                    mkdir $new_icon_dir
-                    cp $icon $new_icon_dir
-                    echo "file create successfully!!!"
+                    echo "note : dir not exist and mkdir $new_icon_path"
+                    mkdir $new_icon_path
+                    cp $icon $new_icon_path'/'$icon_name
+                    echo "$icon_full_name file create successfully!!!"
                 fi
             else
                 echo "warring file not copy successfully because of no dir,you can add params c to force careate dir!"
