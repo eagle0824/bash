@@ -35,10 +35,10 @@ function check_branch
             then
                 if [ "$cmd" != "" -a "$cmd" == "u" ]
                 then
-                    cd $app_path && git checkout $branch_name && git pull && cd -
+                    cd $app_path && git checkout $branch_name && git pull && cd - >/dev/null
                     echo ""
                 else
-                    cd $app_path && git checkout $branch_name && cd -
+                    cd $app_path && git checkout $branch_name && cd - >/dev/null
                     echo ""
                 fi
             fi
