@@ -7,15 +7,15 @@ am="$GIT_AUTHOR_EMAIL"
 cn="$GIT_COMMITTER_NAME"
 cm="$GIT_COMMITTER_EMAIL"
 
-if [ "$GIT_COMMITTER_EMAIL" = "your@email.to.match" ]
+if [ "$GIT_COMMITTER_EMAIL" = "l22k77@163.com" ]
 then
-    cn="Your New Committer Name"
-    cm="Your New Committer Email"
+    cn="kai.liu"
+    cm="kai.liu@clinkway.com"
 fi
-if [ "$GIT_AUTHOR_EMAIL" = "your@email.to.match" ]
+if [ "$GIT_AUTHOR_EMAIL" = "l22k77@163.com" ]
 then
-    an="Your New Author Name"
-    am="Your New Author Email"
+    an="kai.liu"
+    am="kai.liu@clinkway.com"
 fi
 
 export GIT_AUTHOR_NAME="$an"
