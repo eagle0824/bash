@@ -50,6 +50,7 @@ function show_dir()
 {
     level=$2
     #echo "show dir $*"
+    level=`expr $level + 1`
     if [ -d "$1" ]
     then
         for name in `ls $1` 
@@ -58,10 +59,7 @@ function show_dir()
             if [ -d $file ]
             then
                 print_blank $name $level
-                level=`expr $level + 1`
                 show_dir $file $level
-                level=`expr $level - 1`
-                
             else
                 print_blank $name $level
             fi
@@ -69,6 +67,7 @@ function show_dir()
     else 
         print_blank $1 $level
     fi
+    level=`expr $level - 1`
 }
 
 
@@ -79,4 +78,4 @@ path=$(get_abs_path $1)
 
 echo $path
 
-show_dir $path 1
+show_dir $path 0 
