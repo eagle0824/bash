@@ -1,12 +1,12 @@
 #!/bin/bash
 
+#please use your name and email config this sh
+
 #set name
-git config user.name eagle
-git config --global user.name aaaaa 
+git config --global user.name name
 
 #set email
-git config user.email l22k77@163.com
-git config --global user.email aaaaa@company.com
+git config --global user.email email
 
 #set default editor
 git config --global core.editor vim
