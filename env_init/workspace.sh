@@ -43,5 +43,12 @@ if [ ! -d $USER_BIN_PATH ]; then
     mkdir $USER_BIN_PATH
 fi
 
+#初始化repo
 . repo/repo.sh
+
+#初始化imotor
 . imotor/imotor.sh
+
+#初始化java
+. java/java.sh
+
