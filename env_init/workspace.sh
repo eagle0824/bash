@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#工作目录/work是默认的workspace
+#如果不存在此目录需要创建或设为其他目录
+WORK_PATH=/work
+
+IMOTOR_PATH=$WORK_PATH/imotor
+
+#工具相关文件目录
+TOOL_PATH=$WORK_PATH/imotor/tools
+
+#bin文件放置目录
+USER_BIN_PATH=~/bin
+ALIAS_BASH=~/.bashrc
+
+CMD_GIT=git
+
+function git_clone() {
+    $CMD_GIT clone $1
+}
+
+#系统安装时/work/是root用户
+#所以修改/wrok/目录权限为当前当前用户
+
+#owner,group
+#修改WORK_PATH权限为
+WORK_OWNER=$(ls -al $(dirname $WORK_PATH) | awk '$9=="'$(basename $WORK_PATH)'" {print $3}')
+
+if [ $WORK_OWNER != $(whoami) ]; then
+    sudo chown -R $(whoami):$(whoami) $WORK_PATH
+fi
+
+#修改/work权限为777
+if [ ! -w $WORK_PATH -o ! -r $WORK_PATH -o ! -x $WORK_PATH  ]; then
+    chmod 777 $WORK_PATH
+fi
+
+if [ ! -d $TOOL_PATH ]; then
+    mkdir $TOOL_PATH -p
+fi
+
+if [ ! -d $USER_BIN_PATH ]; then
+    mkdir $USER_BIN_PATH
+fi
+
+. repo/repo.sh
+. imotor/imotor.sh

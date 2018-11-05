@@ -1,0 +1,9 @@
+/work/eagle/bash/launcher_icon_name/app/guanwangV2.3.0.2163.apk
+com_autonavi_amapauto_v3_icon.png
+
+/work/eagle/bash/launcher_icon_name/app/WeLink_DEJ_V1.0.10201705161.apk
+com_wedrive_android_welink_welink.png
+
+/work/eagle/bash/launcher_icon_name/app/yingyongbao.apk
+com_tencent_android_qqdownloader_ic_launcher.png
+
