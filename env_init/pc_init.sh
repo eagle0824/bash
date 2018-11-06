@@ -78,7 +78,7 @@ function check_software() {
     if [ "$ret" = "$1" ]; then
         return 1
     else
-        return 0 
+        return 0
     fi
 }
 
@@ -111,7 +111,7 @@ sudo apt-get update
 CURRENT_PATH=$(pwd)
 echo $CURRENT_PATH
 
-#vim 
+#vim
 sudo apt-get install vim exuberant-ctags cscope
 cp $CURRENT_PATH/vim/vimrc ~/.vimrc
 

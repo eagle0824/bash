@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #更新70-android.rules文件解决adb 设备识别不到的问题
 ANDROID_RUNLES_FILE_NAME=70-android.rules
 RULESD_DIR=/etc/udev/rules.d
@@ -20,7 +19,6 @@ sudo /etc/init.d/udev restart
 
 # 添加sdk路径到.bashrc里面，解决adb找不到的问题
 # android-sdk目录为/work/tools/android-sdk
-
 
 #添加环境变量SDK_HOME
 if grep -q "SDK_HOME" "$ALIAS_BASH"; then

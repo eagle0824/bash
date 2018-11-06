@@ -19,6 +19,10 @@ function git_clone() {
     $CMD_GIT clone $1
 }
 
+function git_pull() {
+    $CMD_GIT pull
+}
+
 #COMMIT_IMOTOR_ADD='#start imotor-add start'
 #COMMIT_IMOTOR_END='#start imotor-add end'
 

@@ -10,7 +10,7 @@ if [ ! -d $IMOTOR_PATH/doc ]; then
 fi
 
 REPO_CONFIG_PATH=$(find ./ -name repositories.conf)
-#echo $REPO_CONFIG_PATH 
+#echo $REPO_CONFIG_PATH
 
 for repository in $(awk '{print $1}' $REPO_CONFIG_PATH)
 do
@@ -28,9 +28,19 @@ do
         dir_path=$IMOTOR_PATH
     fi
 
-    pushd $dir_path > /dev/null
-    git_clone $repository 
-    popd > /dev/null
+    repository_dir_name=$dir_path"/"$(basename ${repository%.*})
+
+    if [ -d $repository_dir_name ]; then
+        echo $repository exist on $repository_dir_name, so just update.
+        pushd $repository_dir_name > /dev/null
+        git_pull
+        popd > /dev/null
+    else
+        echo $repository not exist on $repository_dir_name, so clone.
+        pushd $dir_path > /dev/null
+        git_clone $repository
+        popd > /dev/null
+    fi
 done
 
 #下载imotor相关仓库
@@ -39,6 +49,6 @@ done
 #}' $REPO_CONFIG_PATH)
 #do
 #    pushd $IMOTOR_PATH
-#    git_clone $repository 
+#    git_clone $repository
 #    popd
 #done
