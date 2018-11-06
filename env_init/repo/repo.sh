@@ -24,7 +24,7 @@ if grep -q "REPO_URL" "$ALIAS_BASH"; then
     sed -i '/'"REPO_URL"'/d' $ALIAS_BASH
 fi
 
-sleep 2
+sleep 1
 #repo_url="export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'"
 repo_url="export REPO_URL='$REPO_REPOSITORY'"
 echo $repo_url>> $ALIAS_BASH

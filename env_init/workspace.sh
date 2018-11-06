@@ -19,6 +19,9 @@ function git_clone() {
     $CMD_GIT clone $1
 }
 
+#COMMIT_IMOTOR_ADD='#start imotor-add start'
+#COMMIT_IMOTOR_END='#start imotor-add end'
+
 #系统安装时/work/是root用户
 #所以修改/wrok/目录权限为当前当前用户
 
