@@ -52,3 +52,6 @@ fi
 #初始化java
 . java/java.sh
 
+#初始化java
+. android/android.sh
+
