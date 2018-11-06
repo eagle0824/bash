@@ -124,6 +124,12 @@ sudo apt-get install minicom
 #当用用户添加到dialout组，有权限访问相关tty设备
 sudo usermod -aG dialout $(whoami)
 
+#安装wine,window软件运行环境.
+#wget http://httpredir.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.6_all.deb
+#sudo dpkg -i ttf-mscorefonts-installer_3.6_all.deb
+
+#sudo apt-get install wine
+
 #选择java版本
 #select_java_version
 
