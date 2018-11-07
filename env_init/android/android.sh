@@ -34,3 +34,6 @@ echo $sdk_home >> $ALIAS_BASH
 echo $sdk_path >> $ALIAS_BASH
 
 source $ALIAS_BASH
+
+#compile for mt2712
+sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccached libgl1-mesa-dev libxml2-utils xsltproc unzip device-tree-compiler
