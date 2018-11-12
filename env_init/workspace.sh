@@ -61,10 +61,10 @@ fi
 
 #检查是否配置ssh-key
 if [ ! -d ~/.ssh ]; then
-    echo "没有~.ssh目录, 请确认git_config.sh中user.name,user.email已经配置,\n
+    echo " -------------error--------------\n没有~.ssh目录, 请确认git_config.sh中user.name,user.email已经配置,\n
     并通过下面指令生成ssh-key并提交id_rsa.pub给系统管理员添加权限\n
     ssh-keygen -t rsa \n"
-    exit
+    return
 fi
 
 #初始化repo
