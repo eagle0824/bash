@@ -43,13 +43,3 @@ do
         popd > /dev/null
     fi
 done
-
-#下载imotor相关仓库
-#for repository in $(awk '{
-#    if($1=="imotor") print $2
-#}' $REPO_CONFIG_PATH)
-#do
-#    pushd $IMOTOR_PATH
-#    git_clone $repository
-#    popd
-#done
