@@ -72,3 +72,6 @@ fi
 
 #初始化imotor
 . imotor/imotor.sh
+
+#安装部分需要下载自行安装的软件
+. tools/tools.sh
