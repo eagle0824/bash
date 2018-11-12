@@ -50,15 +50,25 @@ if [ ! -d $USER_BIN_PATH ]; then
     mkdir $USER_BIN_PATH
 fi
 
+#初始化java
+. java/java.sh
+
+#git配置
+. git_config.sh
+
+#初始化android相关配置
+. android/android.sh
+
+#检查是否配置ssh-key
+if [ ! -d ~/.ssh ]; then
+    echo "没有~.ssh目录, 请确认git_config.sh中user.name,user.email已经配置,\n
+    并通过下面指令生成ssh-key并提交id_rsa.pub给系统管理员添加权限\n
+    ssh-keygen -t rsa \n"
+    exit
+fi
+
 #初始化repo
 . repo/repo.sh
 
 #初始化imotor
 . imotor/imotor.sh
-
-#初始化java
-. java/java.sh
-
-#初始化java
-. android/android.sh
-

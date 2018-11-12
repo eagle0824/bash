@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ##更新imotor相关的工具仓库或文档说明仓库
+
 if [ ! -d $TOOL_PATH ]; then
     mkdir $TOOL_PATH -p
 fi

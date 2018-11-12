@@ -133,8 +133,5 @@ sudo usermod -aG dialout $(whoami)
 #选择java版本
 #select_java_version
 
-#git配置
-./git_config.sh
-
 #工作目录相关配置以及环境搭建
 ./workspace.sh
