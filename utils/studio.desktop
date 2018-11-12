@@ -1,0 +1,9 @@
+#/usr/share/applications/ 
+ [Desktop Entry]
+ Type=Application
+ Terminal=false
+ Name=Android Studio
+ Exec=/work/tools/android-studio/bin/studio.sh
+ Comment=Integrated Android developer tools for development and debugging.
+ Icon=/work/tools/android-studio/bin/studio.png
+ Categories=GNOME;GTK;Development;IDE;
