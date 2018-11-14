@@ -41,7 +41,6 @@ call vundle#begin()
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-
 " 插件管理工具
  Plugin 'VundleVim/Vundle.vim'
 " 树形目录
@@ -50,27 +49,33 @@ call vundle#begin()
 " 窗口管理
  Plugin 'vim-scripts/winmanager'
 
+"Taglist列表支持"
  Plugin 'vim-scripts/taglist.vim'
+
 " C/C++ 代码补全，需要 ctag 支持
  Plugin 'vim-scripts/OmniCppComplete'
+
+" 自动匹配普通变量函数
+ Plugin 'vim-scripts/AutoComplPop'
+
+" SuperTab tab键补全
+ Plugin 'ervandew/supertab'
 
 " 方便注释
  Plugin 'scrooloose/nerdcommenter'
  Plugin 'scrooloose/syntastic'
 
-
 " 模糊查找
  Plugin 'ctrlpvim/ctrlp.vim'
  Plugin 'fisadev/vim-ctrlp-cmdpalette'
 
- Plugin 'corntrace/bufexplorer'
+ Plugin 'jlanzarotta/bufexplorer'
  Plugin 'vim-scripts/lookupfile'
  Plugin 'vim-scripts/genutils'
 
 " ariline样式
  Plugin 'vim-airline/vim-airline'
  Plugin 'vim-airline/vim-airline-themes'
-
 
 " Plugin 'godlygeek/csapprox'
 " Plugin 'tpope/vim-endwise'
@@ -169,6 +174,7 @@ set t_vb=                        " 置空错误铃声的终端代码
 set tabstop=4                    " 设定 tab 长度为 4
 set tags=./tags                  " 设定 ctag　文件名
 cs add ./cscope.out              " 设定 cscope 文件名
+"set autochdir                   " 自动切换当前目录为当前文件所在的目录
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " platform
@@ -279,6 +285,7 @@ nmap <C-\>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plugin - taglist.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
