@@ -9,6 +9,124 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" install Vundle plugin
+" 
+" https://github.com/vim-scripts
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
+" let Vundle manage Vundle, required
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+
+" 插件管理工具
+ Plugin 'VundleVim/Vundle.vim'
+" 树形目录 
+ Plugin 'scrooloose/nerdtree'
+ Plugin 'Xuyuanp/nerdtree-git-plugin'
+" 窗口管理
+ Plugin 'vim-scripts/winmanager'
+
+ Plugin 'vim-scripts/taglist.vim'
+" C/C++ 代码补全，需要 ctag 支持
+ Plugin 'vim-scripts/OmniCppComplete'
+
+" 方便注释 
+ Plugin 'scrooloose/nerdcommenter'
+ Plugin 'scrooloose/syntastic'
+
+
+" 模糊查找 
+ Plugin 'ctrlpvim/ctrlp.vim'
+ Plugin 'fisadev/vim-ctrlp-cmdpalette'
+
+ Plugin 'corntrace/bufexplorer'
+ Plugin 'vim-scripts/lookupfile'
+ Plugin 'vim-scripts/genutils'
+
+" ariline样式
+ Plugin 'vim-airline/vim-airline'
+ Plugin 'vim-airline/vim-airline-themes'
+
+
+" Plugin 'godlygeek/csapprox'
+" Plugin 'tpope/vim-endwise'
+" Plugin 'tpope/vim-markdown'
+" Plugin 'rhysd/vim-gfm-syntax'
+" Plugin 'mzlogin/vim-markdown-toc'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'henrik/vim-indexed-search'
+" Plugin 'tpope/vim-rails'
+" Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-ragtag'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
+" Plugin 'mbbill/undotree'
+" Plugin 'vim-scripts/YankRing.vim'
+" Plugin 'majutsushi/tagbar'
+" Plugin 'Valloric/MatchTagAlways'
+" Plugin 'EinfachToll/DidYouMean'
+" Plugin 'michaeljsmith/vim-indent-object'
+" Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'chrisbra/csv.vim'
+" Plugin 'ludovicchabant/vim-gutentags'
+" Plugin 'airblade/vim-gitgutter'
+" Plugin 'godlygeek/tabular'
+" Plugin 'kana/vim-textobj-user'
+" Plugin 'nelstrom/vim-textobj-rubyblock'
+" Plugin 'dhruvasagar/vim-table-mode'
+" Plugin 'mattn/webapi-vim'
+" Plugin 'mattn/gist-vim'
+" Plugin 'aklt/plantuml-syntax'
+" Plugin 'AndrewRadev/sideways.vim'
+" Plugin 'janko-m/vim-test'
+" Plugin 'jgdavey/tslime.vim'
+" Plugin 'machakann/vim-highlightedyank'
+" Plugin 'flazz/vim-colorschemes'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'mxw/vim-jsx'
+" Plugin 'FooSoft/vim-argwrap'
+"
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+" filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " generel
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on        " 开启插件
