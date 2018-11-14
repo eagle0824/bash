@@ -24,12 +24,14 @@ do
     #echo "$dir_name"
 
     if [ $dir_name = "tools" -o $dir_name = "doc" ]; then
-        dir_path=$IMOTOR_PATH"/"$dir_name
+        dir_path=$IMOTOR_PATH/$dir_name
     else
         dir_path=$IMOTOR_PATH
     fi
 
-    repository_dir_name=$dir_path"/"$(basename ${repository%.*})
+    BASE_NAME=$(basename ${repository%.*})
+
+    repository_dir_name=$dir_path/${BASE_NAME##*:}
 
     if [ -d $repository_dir_name ]; then
         echo $repository exist on $repository_dir_name, so just update.

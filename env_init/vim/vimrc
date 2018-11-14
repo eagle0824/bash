@@ -10,7 +10,7 @@
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " install Vundle plugin
-" 
+"
 " https://github.com/vim-scripts
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 "
@@ -44,7 +44,7 @@ call vundle#begin()
 
 " 插件管理工具
  Plugin 'VundleVim/Vundle.vim'
-" 树形目录 
+" 树形目录
  Plugin 'scrooloose/nerdtree'
  Plugin 'Xuyuanp/nerdtree-git-plugin'
 " 窗口管理
@@ -54,12 +54,12 @@ call vundle#begin()
 " C/C++ 代码补全，需要 ctag 支持
  Plugin 'vim-scripts/OmniCppComplete'
 
-" 方便注释 
+" 方便注释
  Plugin 'scrooloose/nerdcommenter'
  Plugin 'scrooloose/syntastic'
 
 
-" 模糊查找 
+" 模糊查找
  Plugin 'ctrlpvim/ctrlp.vim'
  Plugin 'fisadev/vim-ctrlp-cmdpalette'
 
