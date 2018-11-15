@@ -124,6 +124,9 @@ sudo apt-get install minicom
 #当用用户添加到dialout组，有权限访问相关tty设备
 sudo usermod -aG dialout $(whoami)
 
+#metazone.bin编译器
+sudo apt-get install hexedit
+
 #选择java版本
 #select_java_version
 
