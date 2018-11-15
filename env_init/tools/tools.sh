@@ -41,3 +41,6 @@ popd > /dev/null
 if [ -n $(which libreoffice) ]; then
     sudo apt-get remove libreoffice-common
 fi
+
+#安装kotlin
+sudo snap install --classic kotlin
