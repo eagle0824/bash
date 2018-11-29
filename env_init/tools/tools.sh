@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Ubuntu下UML工具
+sudo apt-get install dia
+
 WGET_CMD=wget
 DIR_TOOLS=$(pwd)/tools
 echo $DIR_TOOLS
@@ -36,6 +39,19 @@ TTF_WEB_PATH='http://httpredir.debian.org/debian/pool/contrib/m/msttcorefonts/tt
 down_install_apps $TTF_WEB_PATH
 
 popd > /dev/null
+
+#添加wps字体
+WPS_FONTS='/usr/share/fonts/wps_symbol_fonts'
+if [ ! -d $WPS_FONTS ]; then
+    WPS_DIR=$(find ./ -name wps_symbol_fonts -type d)
+    sudo cp $WPS_DIR $WPS_FONTS -rf
+    pushd $WPS_FONTS
+    sudo chmod 644 *
+    sudo mkfontscale 
+    sudo mkfontdir
+    sudo fc-cache
+    popd > /dev/null
+fi
 
 #卸载LibreOffice
 if [ -n $(which libreoffice) ]; then
