@@ -3,6 +3,9 @@
 #Ubuntu下UML工具
 sudo apt-get install dia
 
+#mediainfo 查看工具
+sudo apt-get install mediainfo mediainfo-gui
+
 WGET_CMD=wget
 DIR_TOOLS=$(pwd)/tools
 echo $DIR_TOOLS
@@ -47,7 +50,7 @@ if [ ! -d $WPS_FONTS ]; then
     sudo cp $WPS_DIR $WPS_FONTS -rf
     pushd $WPS_FONTS
     sudo chmod 644 *
-    sudo mkfontscale 
+    sudo mkfontscale
     sudo mkfontdir
     sudo fc-cache
     popd > /dev/null
