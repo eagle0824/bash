@@ -17,8 +17,8 @@ do
     patch_dir=$(echo ${var:${SUBS_NUM}})
     code_dir=$CODE_SPACE/$patch_dir
     pushd $code_dir
-    #git clean -dqfx
-    #git checkout ./*
-    #git status
+    git clean -dqfx
+    git checkout ./*
+    git status
     popd >/dev/null
 done
