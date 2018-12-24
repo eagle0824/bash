@@ -61,5 +61,12 @@ if [ -n $(which libreoffice) ]; then
     sudo apt-get remove libreoffice-common
 fi
 
-#安装kotlin
-sudo snap install --classic kotlin
+#install chrome 浏览器
+#加载源列表
+sudo sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/
+#导入谷歌公钥
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
+#更新源
+sudo apt-get update
+#安装chrome浏览器
+sudo apt-get install google-chrome-stable

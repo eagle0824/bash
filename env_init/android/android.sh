@@ -40,4 +40,9 @@ sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zl
 
 #安装gradle
 curl -s "https://get.sdkman.io" | bash
+source ~/.bashrc
 sdk install gradle 5.0
+#sdk install java
+
+#安装kotlin
+#sudo snap install --classic kotlin

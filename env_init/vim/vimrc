@@ -14,6 +14,9 @@
 " https://github.com/vim-scripts
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 "
+" pluginstall must vim then input 
+" :PluginInstall
+"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required

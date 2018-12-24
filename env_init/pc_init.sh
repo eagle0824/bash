@@ -111,12 +111,17 @@ sudo apt-get update
 CURRENT_PATH=$(pwd)
 echo $CURRENT_PATH
 
-#vim
-sudo apt-get install vim exuberant-ctags cscope
-cp $CURRENT_PATH/vim/vimrc ~/.vimrc
-
 #normal software
 sudo apt-get install ssh meld tar rar zip tree
+sudo apt-get git-core
+
+#vim
+sudo apt-get install vim exuberant-ctags cscope
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+cp $CURRENT_PATH/vim/vimrc ~/.vimrc
+# pluginstall must vim then input 
+# :PluginInstall
+
 
 #install minicom
 sudo apt-get install minicom
