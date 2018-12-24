@@ -106,6 +106,9 @@ function select_java_version() {
 #更新jdk
 #update_oracle_java_source
 
+#更新vim源
+sudo add-apt-repository ppa:jonathonf/vim
+
 sudo apt-get update
 
 CURRENT_PATH=$(pwd)
