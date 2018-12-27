@@ -57,9 +57,10 @@ if [ ! -d $WPS_FONTS ]; then
 fi
 
 #卸载LibreOffice
-if [ -n $(which libreoffice) ]; then
+#if [ -n $(which libreoffice) ]; then
     sudo apt-get remove libreoffice-common
-fi
+    sudo apt-get remove libreoffice
+#fi
 
 #install chrome 浏览器
 #加载源列表
