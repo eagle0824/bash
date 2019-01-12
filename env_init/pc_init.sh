@@ -115,7 +115,7 @@ CURRENT_PATH=$(pwd)
 echo $CURRENT_PATH
 
 #normal software
-sudo apt-get install ssh meld tar rar zip tree
+sudo apt-get install ssh meld unrar tar rar zip tree
 sudo apt-get git-core
 
 #vim
