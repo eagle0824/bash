@@ -42,7 +42,25 @@ sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zl
 curl -s "https://get.sdkman.io" | bash
 source ~/.bashrc
 sdk install gradle 5.0
+
 #sdk install java
+sdk install java 8.0.192-zulu
+sdk install java 7.0.201-zulu
+sdk install java 6.0.119-zulu
+
+#添加环境变量JAVA_HOME
+if grep -q "JAVA_HOME" "$ALIAS_BASH"; then
+    sed -i '/'"JAVA_HOME"'/d' $ALIAS_BASH
+fi
+
+sleep 1
+
+java_home='JAVA_HOME=/home/imotor/.sdkman/candidates/java/current'
+java_path='export PATH=$JAVA_HOME/bin:$PATH'
+
+echo $java_home >> $ALIAS_BASH
+echo $java_path >> $ALIAS_BASH
+
 
 #安装kotlin
 #sudo snap install --classic kotlin
