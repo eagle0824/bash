@@ -71,3 +71,6 @@ wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key a
 sudo apt-get update
 #安装chrome浏览器
 sudo apt-get install google-chrome-stable
+
+#pcm打开软件
+#sudo apt-get install audacity
