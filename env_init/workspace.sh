@@ -51,10 +51,10 @@ if [ ! -d $USER_BIN_PATH ]; then
 fi
 
 #初始化java
-. java/java.sh
+#. java/java.sh
 
 #git配置
-. git_config.sh
+#. git_config.sh
 
 #初始化android相关配置
 . android/android.sh
@@ -64,7 +64,7 @@ if [ ! -d ~/.ssh ]; then
     echo " -------------error--------------\n没有~.ssh目录, 请确认git_config.sh中user.name,user.email已经配置,\n
     并通过下面指令生成ssh-key并提交id_rsa.pub给系统管理员添加权限\n
     ssh-keygen -t rsa \n"
-    return
+    exit
 fi
 
 #初始化repo
