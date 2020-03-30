@@ -107,7 +107,7 @@ function select_java_version() {
 #update_oracle_java_source
 
 #更新vim源
-sudo add-apt-repository ppa:jonathonf/vim
+#sudo add-apt-repository ppa:jonathonf/vim
 
 sudo apt-get update
 
