@@ -47,8 +47,7 @@ source ~/.bashrc
 sdk install gradle 5.1.1
 
 #sdk install java
-sdk install java 8.0.242-zulu
-sdk install java 7.0.242-zulu
+sdk install java 8.0.252-zulu
 
 #添加环境变量JAVA_HOME
 if grep -q "JAVA_HOME" "$ALIAS_BASH"; then
