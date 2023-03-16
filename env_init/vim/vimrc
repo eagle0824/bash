@@ -1,0 +1,406 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Description: 适合自己使用的vimrc文件，for Linux/Windows, GUI/Console
+"
+" Last Change: 2011-01-08 18:00:37
+"
+" Author:      xiaoping.zhang
+"
+" Version:     1.0.0 - for vim7.2
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" install Vundle plugin
+"
+" https://github.com/vim-scripts
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+"
+" pluginstall must vim then input 
+" :PluginInstall
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
+" let Vundle manage Vundle, required
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+" Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" 插件管理工具
+ Plugin 'VundleVim/Vundle.vim'
+" 树形目录
+ Plugin 'scrooloose/nerdtree'
+ Plugin 'Xuyuanp/nerdtree-git-plugin'
+" 窗口管理
+ Plugin 'vim-scripts/winmanager'
+
+"Taglist列表支持"
+ Plugin 'vim-scripts/taglist.vim'
+
+" C/C++ 代码补全，需要 ctag 支持
+ Plugin 'vim-scripts/OmniCppComplete'
+
+" 自动匹配普通变量函数
+ Plugin 'vim-scripts/AutoComplPop'
+
+" SuperTab tab键补全
+ Plugin 'ervandew/supertab'
+
+" 方便注释
+ Plugin 'scrooloose/nerdcommenter'
+ Plugin 'scrooloose/syntastic'
+
+" 模糊查找
+ Plugin 'ctrlpvim/ctrlp.vim'
+ Plugin 'fisadev/vim-ctrlp-cmdpalette'
+
+ Plugin 'jlanzarotta/bufexplorer'
+ Plugin 'vim-scripts/lookupfile'
+ Plugin 'vim-scripts/genutils'
+
+" ariline样式
+ Plugin 'vim-airline/vim-airline'
+ Plugin 'vim-airline/vim-airline-themes'
+
+" Plugin 'godlygeek/csapprox'
+" Plugin 'tpope/vim-endwise'
+" Plugin 'tpope/vim-markdown'
+" Plugin 'rhysd/vim-gfm-syntax'
+" Plugin 'mzlogin/vim-markdown-toc'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'henrik/vim-indexed-search'
+" Plugin 'tpope/vim-rails'
+" Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-ragtag'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
+" Plugin 'mbbill/undotree'
+" Plugin 'vim-scripts/YankRing.vim'
+" Plugin 'majutsushi/tagbar'
+" Plugin 'Valloric/MatchTagAlways'
+" Plugin 'EinfachToll/DidYouMean'
+" Plugin 'michaeljsmith/vim-indent-object'
+" Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'chrisbra/csv.vim'
+" Plugin 'ludovicchabant/vim-gutentags'
+" Plugin 'airblade/vim-gitgutter'
+" Plugin 'godlygeek/tabular'
+" Plugin 'kana/vim-textobj-user'
+" Plugin 'nelstrom/vim-textobj-rubyblock'
+" Plugin 'dhruvasagar/vim-table-mode'
+" Plugin 'mattn/webapi-vim'
+" Plugin 'mattn/gist-vim'
+" Plugin 'aklt/plantuml-syntax'
+" Plugin 'AndrewRadev/sideways.vim'
+" Plugin 'janko-m/vim-test'
+" Plugin 'jgdavey/tslime.vim'
+" Plugin 'machakann/vim-highlightedyank'
+" Plugin 'flazz/vim-colorschemes'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'mxw/vim-jsx'
+" Plugin 'FooSoft/vim-argwrap'
+"
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+" filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" generel
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype plugin indent on        " 开启插件
+syntax on                        " 自动语法高亮
+set t_Co=256
+"colorscheme xp256
+colorscheme peachpuff
+let mapleader=","
+
+set backspace=indent,eol,start   " 不设定在插入状态无法用退格键和 Delete 键删除回车符
+set backupcopy=yes               " 设置备份时的行为为覆盖
+set cmdheight=1                  " 设定命令行的行数为 1
+set expandtab                    " 用空格替代tab
+set foldcolumn=0                 " 设置折叠区域的宽度
+"set foldenable                   " 开启折叠
+"set foldmethod=syntax            " 设置语法折叠
+"set foldlevel=3                  " 设置折叠层数为
+set guioptions-=T                " 隐藏工具栏
+set guioptions-=m                " 隐藏菜单栏
+set helplang=cn                  " 设置帮助语言
+set hidden                       " 允许在有未保存的修改时切换缓冲区，此时的修改由 vim 负责保存
+set hlsearch                     " 搜索时高亮显示被找到的文本
+set ignorecase smartcase         " 搜索时忽略大小写，但在有一个或以上大写字母时仍保持对大小写敏感
+set incsearch                    " 输入搜索内容时就显示搜索结果
+set laststatus=2                 " 显示状态栏 (默认值为 1, 无法显示状态栏)
+set magic                        " 设置魔术
+set nocompatible                 " 关闭 vi 兼容模式
+set noerrorbells                 " 关闭错误信息响铃
+set nobackup                     " 关闭备份
+set novisualbell                 " 关闭使用可视响铃代替呼叫
+set nowb		                 " 不产生swp文件
+set nowrapscan                   " 禁止在搜索到文件两端时重新搜索
+set number                       " 显示行号
+"set relativenumber               " 显示相对行号
+set ruler                        " 打开状态栏标尺
+set shiftwidth=4                 " 设定 << 和 >> 命令移动时的宽度为 4
+set smartindent                  " 开启新行时使用智能自动缩进
+set softtabstop=4                " 使得按退格键时可以一次删掉 4 个空格
+set t_vb=                        " 置空错误铃声的终端代码
+set tabstop=4                    " 设定 tab 长度为 4
+set tags=./tags                  " 设定 ctag　文件名
+cs add ./cscope.out              " 设定 cscope 文件名
+"set autochdir                   " 自动切换当前目录为当前文件所在的目录
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" platform
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! MyOS()
+  if has("win32")
+    return "windows"
+  else
+    return "linux"
+  endif
+endfunction
+
+function! SwitchToBuf(filename)
+  "Find in current tab
+  let bufwinnr = bufwinnr(a:filename)
+  if bufwinnr != -1
+    exec bufwinnr . "wincmd w"
+    return
+  else
+    "Find in each tab
+    tabfirst
+    let tab = 1
+    while tab <= taabpagenr("$")
+      let bufwinnr = bufwinnr(a:filename)
+      if bufwinnr != -1
+	exec "normal " . tab . "gt"
+	exec bufwinnr . "wincmd w"
+	return
+      endif
+      tabnext
+      let tab = tab + 1
+    endwhile
+
+    "Not exist, new tab
+    exec "tabnew " . a:filename
+  endif
+endfunction
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fast edit vimrc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if MyOS() == 'linux'
+  "Fast reloading of the .vimrc
+  ""nmap ss :source ~/.vimrc<cr>
+  "Fast editing of .vimrc
+  ""nmap ee :e ~/.vimrc<cr>
+  "When .vimrc is edited, reload it
+  "autocmd! bufwritepost .vimrc source ~/.vimrc
+elseif MyOS() == 'windows'
+  "Set helplang
+  set helplang=cn
+  "Fast reloading of the .vimrc
+  "map <silent> <leader>ss :source ~/_vimrc<cr>
+  "Fast editing of .vimrc
+  "map <silent> <leader>ee :e ~/_vimrc<cr>
+  "When .vimrc is edited, reload it
+  "autocmd! bufwritepost .vimrc source ~/_vimrc
+endif
+
+"For window version
+if MyOS() == 'windows'
+  source $VIMRUNTIME/mswin.vim
+  behave mswin
+endif
+
+"Execute project related configuration in current directory
+if filereadable("workspace.vim")
+  source workspace.vim
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" plugin - cscope
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" auto load
+if has("cscope")
+        set csprg=/usr/bin/cscope
+        set csto=0
+        set cst
+        set nocsverb
+        " add any database in current directory
+        if filereadable("cscope.out")
+            cs add cscope.out
+        " else add database pointed to by environment
+        elseif $CSCOPE_DB != ""
+            cs add $CSCOPE_DB
+        endif
+        set csverb
+endif
+" s: Finds all uses of this symbol
+nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+" g: Finds definition of this symbol
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+" d: Finds calls by this function
+nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+" c: Finds calls to this function
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+" t: Find assignments to
+nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+" e: Find this egrep pattern
+nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+" f: Opens the filename under the cursor
+nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+" i: Find files #including this file
+nmap <C-\>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" plugin - taglist.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1
+"let Tlist_Use_Right_Window = 1
+"let Tlist_Auto_Open = 1
+if filereadable("tags")
+  let g:LookupFile_TagExpr = '"tags"'
+endif
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" plugin - bufexplorer.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:bufExplorerDefaultHelp=0       " Do not show default help.
+let g:bufExplorerShowRelativePath=1  " Show relative paths.
+let g:bufExplorerSortBy='mru'        " Sort by most recently used.
+let g:bufExplorerSplitRight=0        " Split left.
+let g:bufExplorerSplitVertical=1     " Split vertically.
+let g:bufExplorerSplitVertSize = 30  " Split width
+let g:bufExplorerUseCurrentWindow=1  " Open in new window.
+autocmd BufWinEnter \[Buf\ List\] setl nonumber
+
+
+""""""""""""""""""""""""""""""
+" plugin - winmanager.vim
+""""""""""""""""""""""""""""""
+let g:winManagerWindowLayout = "BufExplorer|TagList"
+let g:winManagerWidth = 30
+let g:defaultExplorer = 0
+map <F3> :WMToggle<CR>
+imap <F3> <ESC>:NERDTreeToggle<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" plugin - NERD_tree.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"F4 NERDTree 切换
+map <F4> :NERDTreeToggle<CR>
+imap <F4> <ESC>:NERDTreeToggle<CR>
+let NERDTreeWinPos = 'right'                 " 显示在右边
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" plugin - lookupfile.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:LookupFile_MinPatLength = 2             "最少输入2个字符才开始查找
+let g:LookupFile_PreserveLastPattern = 0      "不保存上次查找的字符串
+let g:LookupFile_PreservePatternHistory = 1   "保存查找历史
+let g:LookupFile_AlwaysAcceptFirst = 1        "回车打开第一个匹配项目
+let g:LookupFile_AllowNewFiles = 0            "不允许创建不存在的文件
+if filereadable("./filenametags")             "设置tag文件的名字
+  let g:LookupFile_TagExpr = '"./filenametags"'
+endif
+"nmap <silent> kk :LookupFile<CR>
+"nmap <silent> ll :LUBufs<cr>
+"nmap <silent> lw :LUWalk<cr>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" plugin - NERD_commenter.vim	注释代码用的，
+" [count],cc 光标以下count行逐行添加注释(7,cc)
+" [count],cu 光标以下count行逐行取消注释(7,cu)
+" [count],cm 光标以下count行尝试添加块注释(7,cm)
+" ,cA 在行尾插入 /* */,并且进入插入模式。 这个命令方便写注释。
+" 注：count参数可选，无则默认为选中行或当前行
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let NERDSpaceDelims=1                         " 让注释符与语句之间留一个空格
+let NERDCompactSexyComs=1                     " 多行注释时样子更好看
+
+""""""""""""""""""""""""""""""
+" showmarks setting
+""""""""""""""""""""""""""""""
+" Enable ShowMarks
+let showmarks_enable = 1
+" Show which marks
+let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+" Ignore help, quickfix, non-modifiable buffers
+let showmarks_ignore_type = "hqm"
+" Hilight lower & upper marks
+let showmarks_hlline_lower = 1
+let showmarks_hlline_upper = 1
+
+" superTab
+let g:SuperTabDefaultCompletionType="context"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" my shortcuts
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <F12> :%s,\s\+$,,g<CR>                  " 删除所有行未尾空格
+nmap bb :q<CR>                               " 退出
+
+"自动补全""''
+:inoremap " ""<ESC>i
+:inoremap ' ''<ESC>i
+:inoremap ( ()<ESC>i
+:inoremap { {}<ESC>i
+:inoremap [ []<ESC>i
+"自动补全[]{}[]并换行
+":inoremap ( ()<ESC>i
+":inoremap ) <c-r>=ClosePair(')')<CR>
+"inoremap { {<CR>}<ESC>O
+":inoremap } <c-r>=ClosePair('}')<CR>
+":inoremap [ []<ESC>i
+":inoremap ] <c-r>=ClosePair(']')<CR>
+"function! ClosePair(char)
+"    if getline('.')[col('.') - 1] == a:char
+"        return "\<Right>"
+"   else
+"        return a:char
+"   endif
+"endfunction

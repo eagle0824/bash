@@ -1,0 +1,3 @@
+1 metazone.bin¿¿¿¿¿¿metazone
+2 metazone_new.bin¿¿¿¿¿¿¿¿¿¿¿¿¿¿dd¿¿¿metazone
+3 metazone.result¿¿metazone_new.bin¿¿¿¿¿¿¿metazone.bin¿¿¿¿¿bin¿¿
